@@ -1,0 +1,626 @@
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700|Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Merienda+One|Roboto:300,400,500&display=swap');
+
+// Cores
+$gray: #818181;
+$white: #fafafa;
+$black: #000;
+$azul: #427dba;
+$red: #cc0000;
+$dots-slick-active: $red;
+$dots-slick: $gray;
+$gray-elements: #343a40;
+
+
+/**
+** Box Shadow
+**/
+%box-shadow {
+    box-shadow: .5rem .5rem 1rem rgba(0, 0, 0, .075) !important;
+}
+
+
+/**
+** Gradient
+**/
+%bg-gradient {
+    background: rgb(99, 13, 13);
+    background: linear-gradient(90deg, rgba(99, 13, 13, 1) 0%, rgba(204, 0, 0, 1) 100%);
+}
+
+.bg-gradient {
+    background: rgb(99, 13, 13);
+    background: linear-gradient(90deg, rgba(99, 13, 13, 1) 0%, rgba(204, 0, 0, 1) 100%);
+}
+
+
+
+// Fontes
+@mixin font-size($size) {
+    font-size: $size + px;
+    font-size: ($size/20) + rem;
+}
+
+p{
+    @include font-size(18)
+}
+
+@mixin input-placeholder-color($color) {
+    &::-webkit-input-placeholder {
+        color: $color !important;
+    }
+
+    &:-moz-placeholder {
+        color: $color !important;
+    }
+
+    &::-moz-placeholder {
+        color: $color !important;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color !important;
+    }
+
+    &::-ms-placeholder {
+        color: $color !important;
+    }
+
+    &::placeholder {
+        color: $color !important;
+    }
+}
+
+%variavel{ //placeholder
+    color: red;
+    font-size: 15px;
+}
+
+p{
+    @extend %variavel;
+}
+
+/*Alterações no Slick*/
+.slick-next,
+.slick-prev {
+    z-index: 1;
+}
+
+.slick-dots {
+    li {
+        button {
+            &:before {
+                font-family: 'Font Awesome 5 Free';
+                font-size: 0.7rem;
+                font-weight: 900;
+                content: "\f111";
+                color: $dots-slick;
+            }
+        }
+    }
+
+    li.slick-active {
+        button {
+            &:before {
+                color: $dots-slick-active;
+            }
+        }
+    }
+}
+
+.slick-next {
+    right: 5%;
+
+    &:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 1.5rem;
+        content: "\f105";
+    }
+}
+
+.slick-prev {
+    left: 5%;
+
+    &:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 1.5rem;
+        content: "\f104";
+    }
+}
+
+/*Elementos que sofrerão transições*/
+a,
+button,
+figcaption,
+.pagination,
+.nav-item,
+.nav-link,
+.btn,
+.servico,
+.servico::before,
+nav {
+    transition: 0.3s all ease-out;
+    -o-transition: 0.3s all ease-out;
+    -moz-transition: 0.3s all ease-out;
+    -webkit-transition: 0.3s all ease-out;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: $gray;
+    font-weight: 300;
+}
+
+p {
+    color: $gray;
+    font-size: 1.15rem;
+    font-weight: 300;
+}
+
+input,
+select,
+textarea {
+    height: auto;
+    border-radius: 0;
+}
+
+textarea {
+    max-height: 200px;
+}
+
+button:focus {
+    outline: none;
+}
+
+figure {
+    position: relative;
+
+    figcaption {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.bg-red {
+    background-color: $red;
+}
+
+.bg-black {
+    background-color: $black;
+}
+
+
+html,
+body {
+    background-color: $white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    height: 100%;
+    line-height: 1;
+}
+
+@media (min-width: 1200px) {
+
+    html,
+    body {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    html,
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    html,
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        font-size: 13px;
+    }
+}
+
+/*Modificações*/
+.wpcf7-response-output {
+    color: inherit;
+    font-size: 18px;
+    text-align: center;
+    padding: 1rem !important;
+    font-weight: 400;
+    border-width: 6px !important;
+    margin: 0;
+}
+
+.btn {
+    white-space: normal;
+    border-radius: 0;
+    font-size: 1.15rem;
+    font-weight: 300;
+    border-radius: 5px;
+}
+
+header {
+
+    a {
+        color: $white;
+        padding: 0 .3rem;
+    }
+
+    i {
+        color: $white;
+    }
+
+    .nav-item {
+        .nav-link {
+            padding: 1rem !important;
+            color: $black;
+            font-size: 1.15rem;
+            font-weight: 400;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $black;
+                color: $white;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        margin: 0;
+        padding: 0;
+        background-color: $black;
+        border: none;
+        border-radius: 0;
+
+        .dropdown-item {
+            color: $white;
+            font-weight: 300;
+            padding: .8rem;
+
+            &:hover {
+                background-color: darken($red, 15);
+            }
+        }
+    }
+}
+
+.title {
+    font-family: 'Merienda One';
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    position: relative;
+
+    .first-letter {
+        color: $white;
+        width: 30px;
+        height: 30px;
+        background-color: $red;
+        border-radius: 50%;
+
+    }
+}
+
+.separator {
+    &:before {
+        content: "|";
+        margin: 0 .8rem;
+        color: $white;
+    }
+}
+
+// .section-citacao h2
+// .section-citacao p
+// .section-citacao p:before
+
+.section-citacao {
+    h2 {
+        font-family: 'Merienda One';
+        font-size: 2rem;
+        color: $red;
+    }
+
+    p {
+        font-weight: 400;
+        margin: 20px;
+
+        &:before{
+            content: "";
+            background: red;
+        }
+    }
+}
+
+.map-japan {
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    svg {
+        width: 100%;
+    }
+
+    ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .fukidashi {
+        display: inline-block;
+        background: black;
+        font-size: 24px;
+        color: black;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    .active {
+        color: white;
+        fill: black !important;
+        background: black !important;
+    }
+}
+
+.section-project {
+    background-color: $black;
+    padding: 2rem 0;
+
+    .title {
+        color: $white;
+    }
+
+    .items {
+
+        p,
+        i {
+            color: $white;
+            font-size: 1.25rem;
+        }
+
+        p {
+            font-weight: 300;
+        }
+
+        i {
+            margin: 0 .5rem;
+        }
+    }
+}
+
+footer {
+    nav {
+        ul {
+            li {
+                list-style: none;
+                margin: 10px;
+
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+#backToTop {
+    background-color: $black;
+    color: $white;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.section-title {
+    @extend %bg-gradient;
+    padding: 2.5rem 0;
+
+    h1 {
+        color: $white;
+        font-family: 'Merienda One';
+    }
+}
+
+.parallax .parallax-image {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.container-destinos {
+    .item {
+        border: 1px solid $gray;
+        padding: 1rem;
+        margin: .5rem 0;
+    }
+}
+
+/**
+** Página de Blog e Single Blog
+**/
+.page-blog {
+    .nav {
+        .nav-item {
+            padding: 1rem 1.5rem;
+
+            .nav-link {
+                border-bottom: 2px solid transparent;
+                padding: 0;
+
+                &.active {
+                    color: $red;
+                    border-bottom: 2px solid $red;
+                }
+            }
+        }
+    }
+
+    h2 {
+        padding: .5rem 0;
+        font-size: 26px;
+        position: relative;
+        margin-top: 2rem;
+
+        &:before {
+            content: "";
+            height: 3px;
+            width: 45px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $red;
+        }
+    }
+
+    .blog-content {
+        padding: 60px;
+        margin: 0 auto;
+        text-align: justify;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem;
+            float: right;
+        }
+    }
+}
+
+.blog-card {
+    position: relative;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all .3s;
+    border: none;
+    @extend %box-shadow;
+
+
+    @media(max-width: 1024px) {
+        margin: 100px auto;
+    }
+
+    .content-wrapper {
+        left: 8.5%;
+
+        @media(min-width: 1024px) {
+            left: -75px;
+        }
+    }
+
+    &-img {
+        padding: 0;
+        height: 180px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        overflow: hidden;
+
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+        }
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 768px) {
+            transform: translateY(-50%);
+            width: 90%;
+        }
+
+        @media screen and (max-width: 576px) {
+            width: 95%;
+        }
+
+        @media screen and (max-height: 500px) and (min-width: 992px) {
+            height: 270px;
+        }
+    }
+
+    .btn-more {
+        border: none;
+        border-left: 4px solid $red;
+        padding: 0 .5rem;
+    }
+
+    &-content {
+
+        @media screen and (max-width: 768px) {
+            margin-top: -80px;
+            text-align: center;
+            padding: 0 30px;
+        }
+
+        @media screen and (max-width: 576px) {
+            padding: 0
+        }
+    }
+
+    &-date {
+        color: $gray-elements;
+        margin-bottom: 10px;
+        display: block;
+        font-size: 14px;
+    }
+
+    h5 {
+        font-size: 1.15rem;
+        color: $black;
+    }
+
+    p {
+        color: $black;
+        font-size: 15px;
+    }
+}
+
+.section-instagram{
+    padding: 2rem 0;
+}

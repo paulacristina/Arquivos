@@ -1,0 +1,1 @@
+{"version":3,"sources":["testecol.scss"],"names":[],"mappings":"AAAA,IAAI,CACA,UAAU,CAAE,IAAI,CAChB,QAAQ,CAAE,MAAM,CACnB","file":"testecol.css","sourcesContent":["body{\r\n    margin-top: 20px;\r\n    overflow: hidden;\r\n}"]}
